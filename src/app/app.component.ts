@@ -12,8 +12,10 @@ export class AppComponent {
   // @ts-ignore
   @ViewChild("dialog") dialogRef: TemplateRef<any>;
 
-  title = 'hello';
-  file: File|undefined;
+  title = 'CNF DIMACS Solver';
+  cnfText="";
+  // @ts-ignore
+  file: File;
 
   constructor(private solverService: SolverApiService, private dialog: MatDialog) {}
 
@@ -22,10 +24,16 @@ export class AppComponent {
   }
 
   solve() {
-    if(this.file == undefined) return;
-    this.solverService.post(this.file).subscribe((data)=>{
-      console.log(data);
-      this.dialog.open(this.dialogRef, {data:data});
-    });
+    if(this.file == undefined && this.cnfText == "") return;
+    if(this.file != undefined) {
+      this.solverService.post(this.file).subscribe((data)=>{
+        this.dialog.open(this.dialogRef, {data:data});
+      });
+    }
+    else if(this.cnfText != "") {
+      this.solverService.postText(new Blob([this.cnfText], {type: 'text/plain'})).subscribe((data)=>{
+        this.dialog.open(this.dialogRef, {data:data});
+      });
+    }
   }
 }

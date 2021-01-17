@@ -15,4 +15,10 @@ export class SolverApiService {
     form.append("cnf", file);
     return this.http.post(this.baseUrl, form);
   }
+
+  postText(text: Blob) {
+    const form = new FormData();
+    form.append("cnf", text, "cnf");
+    return this.http.post(this.baseUrl, form);
+  }
 }

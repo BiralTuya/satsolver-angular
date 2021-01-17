@@ -9,7 +9,7 @@
       </div>
       <div style="margin-top: 30px;">
           <mat-label FloatLabelType = "always">Or paste DIMACS file here</mat-label>
-          <textarea matInput style="width: 100%;" rows="20"></textarea>
+          <textarea matInput style="width: 100%;" rows="20" [(ngModel)]="cnfText"></textarea>
       </div>
       <div>
         <button (click)="solve()"  style="width: 100%; margin-top: 10px;" mat-raised-button color="primary">Solve</button>
