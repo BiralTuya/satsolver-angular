@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { SolverApiService } from './service/solver-api.service';
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
